@@ -20,6 +20,10 @@ end
 
 group :development do
   gem "web-console", "~> 4.2.0"
+  # For LSP
+  gem "ruby-lsp"
+  gem "rubocop"
+  gem "solargraph"
 end
 
 group :test do
