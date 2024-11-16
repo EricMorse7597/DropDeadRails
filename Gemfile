@@ -22,8 +22,10 @@ end
 group :development do
   gem 'web-console', '~> 4.2.0'
   # For LSP
+  gem 'htmlbeautifier'
   gem 'rubocop'
   gem 'ruby-lsp'
+  gem 'rufo'
   gem 'solargraph'
 end
 

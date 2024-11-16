@@ -119,6 +119,7 @@ GEM
     guard-minitest (2.4.6)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
+    htmlbeautifier (1.4.3)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.0)
@@ -262,6 +263,7 @@ GEM
       sorbet-runtime (>= 0.5.10782)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
+    rufo (0.18.0)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -341,6 +343,7 @@ DEPENDENCIES
   debug (= 1.5.0)
   guard (= 2.18.0)
   guard-minitest (= 2.4.6)
+  htmlbeautifier
   importmap-rails (= 1.1.0)
   jbuilder (= 2.11.5)
   minitest (= 5.15.0)
@@ -351,6 +354,7 @@ DEPENDENCIES
   rails-controller-testing (= 1.0.5)
   rubocop
   ruby-lsp
+  rufo
   sassc-rails (= 2.1.2)
   selenium-webdriver (= 4.2.0)
   solargraph
