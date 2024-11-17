@@ -6,7 +6,11 @@
         for assignment 2 developed by Eric Morse.
     </h2>
 
+    <% if logged_in?%>
+    Play!
+    <% else %>
     <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+    <% end %>
 </div>
 
 <%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200"),
