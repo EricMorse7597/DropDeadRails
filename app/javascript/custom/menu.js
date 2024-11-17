@@ -9,5 +9,5 @@ function addToggleListener(_selectedId, _menuId, _toggleClass) {
 
 document.addEventListener("turbo:load", function () {
     addToggleListener("hamburger", "navbar-menu", "collapse");
-    addToggleListener("acount", "dropdown-menu", "active");
+    addToggleListener("account", "dropdown-menu", "active");
 });
