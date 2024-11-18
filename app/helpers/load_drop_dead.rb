@@ -61,6 +61,6 @@ class AutoDropDead
 
     # display winning player
     puts("\nPlayer #{winningPlayer.pid} wins!!!")
-    { winningPlayer: winningPlayer.pid, winningScore: winningPlayer.score }
+    { winnerID: winningPlayer.pid, winningScore: winningPlayer.score }
   end
 end

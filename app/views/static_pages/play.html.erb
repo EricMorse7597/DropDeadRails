@@ -1,6 +1,6 @@
 <% provide(:title, "Play") %>
 
-<%= form_with(model: @game) do |f|%>
+<%= form_with(model: @play_game, url: play_game_path) do |f|%>
 <div class="sides">
     <%= f.label :sides %>
     <%= f.number_field :sides, class: 'form-control' %>

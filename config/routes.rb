@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :users
-  resource :games, only: %i[create destroy]
+  resources :games
+
+  post '/play_game', to: 'games#play'
 end

@@ -1,0 +1,17 @@
+<% provide(:title, "Game #{@game.id}") %>
+
+<div class="center">
+    <div class="row">
+        <div class="col-md-12">
+            <h1> Game <%= @game.id %> </h1>
+            <%= winner @game.winnerID %> won the game with a score of <%= @game.winningScore %>
+            </br>
+            settings used: <%= @game.settings %>
+        </div>
+    </div>
+    <div class="row center">
+        <%= link_to "Change Parameters", play_path, class: "btn btn-lg btn-primary" %>
+        <% @settings = @game.settings.split(',')%>
+        <%= link_to "Play Again", play_game_path(sides: @settings[0], dice_count: @settings[1], player_count: @settings[2]), data: {turbo_method: :post}, class: "btn btn-lg btn-primary" %>
+    </div>
+</div>
