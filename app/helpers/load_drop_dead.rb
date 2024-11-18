@@ -18,14 +18,14 @@ class AutoDropDead
     # main game loop
     turnCounter = 1
     while activePlayers.length.positive?
-      puts("~~~~~~~~ Turn #{turnCounter} ~~~~~~~~~~~~")
+      # puts("~~~~~~~~ Turn #{turnCounter} ~~~~~~~~~~~~")
 
       # Loop through remaining players and have them roll their dice
       (1..activePlayers.length).each do |i|
         i -= 1
-        puts("Player #{activePlayers[i].pid}")
+        # puts("Player #{activePlayers[i].pid}")
         activePlayers[i].RollDice()
-        puts("Current Score: #{activePlayers[i].score}\n\n")
+        # puts("Current Score: #{activePlayers[i].score}\n\n")
       end
 
       # Go through the remaining players and remove any dead players from the active list
@@ -33,7 +33,7 @@ class AutoDropDead
       activePlayers.each do |player|
         if player.isAlive == false
           deadPlayers.push(player)
-          puts("Player #{player.pid} has dropped dead.")
+          # puts("Player #{player.pid} has dropped dead.")
         else
           alivePlayers.push(player)
         end
@@ -45,12 +45,12 @@ class AutoDropDead
     end
 
     # Print the results
-    puts("\n~~~~~~~~~~ Results ~~~~~~~~~~~~")
+    # puts("\n~~~~~~~~~~ Results ~~~~~~~~~~~~")
     deadPlayers = deadPlayers.sort_by(&:pid) # sort the players by pid
     winningPlayer = nil
     # Loop through dead players to show their score and find the player with the highest score
     deadPlayers.each do |player|
-      puts("Player #{player.pid} score: #{player.score}")
+      # puts("Player #{player.pid} score: #{player.score}")
 
       if winningPlayer.nil?
         winningPlayer = player
@@ -60,7 +60,7 @@ class AutoDropDead
     end
 
     # display winning player
-    puts("\nPlayer #{winningPlayer.pid} wins!!!")
+    # puts("\nPlayer #{winningPlayer.pid} wins!!!")
     { winnerID: winningPlayer.pid, winningScore: winningPlayer.score }
   end
 end

@@ -10,7 +10,6 @@ class GamesController < ApplicationController
   def play
     @playGame = AutoDropDead.new
     @results = @playGame.play_game(params[:sides].to_i, params[:dice_count].to_i, params[:player_count].to_i)
-    puts(@results)
     create
   end
 
