@@ -8,8 +8,20 @@ class GamesController < ApplicationController
   end
 
   def play
+    sides = params[:sides]
+    dice_count = params[:dice_count]
+    player_count = params[:player_count]
+    puts("SIDES~~~~~~~~~~~~~~~~~~~ #{sides.blank?}")
+
+    if sides.blank? || dice_count.blank? || player_count.blank?
+      puts("222222222SIDES~~~~~~~~~~~~~~~~~~~ #{sides.blank?}")
+      flash.now[:danger] = 'invalid input, please input a number for each field'
+      render 'static_pages/play', status: :unprocessable_entity
+      return
+    end
+
     @playGame = AutoDropDead.new
-    @results = @playGame.play_game(params[:sides].to_i, params[:dice_count].to_i, params[:player_count].to_i)
+    @results = @playGame.play_game(sides.to_i, dice_count.to_i, player_count.to_i)
     create
   end
 
