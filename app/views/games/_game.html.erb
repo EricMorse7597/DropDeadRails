@@ -1,0 +1,9 @@
+<li id="game-<%= game.id%>">
+    <span class="user"><%= link_to game.user.name%></span>
+    <span class="timestamp">
+        Played <%= time_ago_in_words(game.created_at) %> ago.
+    </span>
+
+    <span class="winner">Player <%= game.winnerID %> won</span>
+    <span class="score">with a score of <%= game.winningScore %>.</span>
+</li>

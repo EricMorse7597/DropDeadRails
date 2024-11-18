@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/help', to: 'static_pages#help'
   get '/about', to: 'static_pages#about'
+  get '/play', to: 'static_pages#play'
 
   get '/signup', to: 'users#new'
   get 'users/new'
@@ -13,4 +14,5 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :users
+  resource :games, only: %i[create destroy]
 end

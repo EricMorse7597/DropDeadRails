@@ -8,6 +8,7 @@ class StaticPagesController < ApplicationController
   def about
   end
 
-  def login
+  def play
+    @game = current_user.games.build if logged_in?
   end
 end

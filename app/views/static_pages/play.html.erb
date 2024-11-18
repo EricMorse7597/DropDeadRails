@@ -1,0 +1,13 @@
+<% provide(:title, "Play") %>
+
+<%= form_with(model: @game) do |f|%>
+<div class="sides">
+    <%= f.label :sides %>
+    <%= f.number_field :sides, class: 'form-control' %>
+    <%= f.label :dice_count %>
+    <%= f.number_field :dice_count, class: 'form-control' %>
+    <%= f.label :player_count %>
+    <%= f.number_field :player_count, class: 'form-control' %>
+</div>
+<%= f.submit "Play!", class: "btn btn-primary"%>
+<% end %>

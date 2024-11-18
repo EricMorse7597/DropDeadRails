@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
-  validates :playerID, presence: true
+  belongs_to :user
+  default_scope -> { order(created_at: :desc) }
   validates :winnerID, presence: true
 end

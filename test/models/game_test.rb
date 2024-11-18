@@ -3,16 +3,11 @@ require 'test_helper'
 class GameTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
-    @game = Game.new(playerID: @user.id, winnerID: @user.id, winningScore: 126)
+    @game = @user.games.build(playerID: @user.id, winnerID: @user.id, winningScore: 126)
   end
 
   test 'should be valid' do
     assert @game.valid?
-  end
-
-  test 'user ID should be present' do
-    @game.playerID = nil
-    assert_not @game.valid?
   end
 
   test 'winner ID should be present' do

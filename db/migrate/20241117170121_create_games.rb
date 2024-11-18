@@ -8,6 +8,6 @@ class CreateGames < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    add_index :games, [:playerID]
+    add_index :games, %i[playerID created_at]
   end
 end
